@@ -34,6 +34,9 @@ jobs:
       
       - name: Extract buildversion
         run: export VERSION=`cat version.txt` && echo "::set-env name=BUILD_VERSION::${VERSION}.${GITHUB_RUN_NUMBER}"
+        
+      - name: List files
+        run: ls -l
       
       - name: Copy Built artifacts
         run: mkdir release && cp -r */target/*.jar release
